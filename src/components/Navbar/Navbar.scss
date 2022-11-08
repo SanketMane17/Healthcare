@@ -1,0 +1,106 @@
+.app__navbar {
+    display: flex;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 64px -24px #cbdad2;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.app__navbar-dropdown {
+    float: left;
+    overflow: hidden;
+    margin-left: 1rem;
+    font-family: 'Poppins';
+
+    button {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1rem;
+        text-align: center;
+        color: rgba(0, 82, 73, 0.8);
+        border: none;
+        background-color: white;
+        cursor: pointer;
+
+        svg {
+            height: 12px;
+            margin-left: 2px;
+        }
+    }
+
+    .app__navbar-dropdown-content {
+        display: none;
+        position: absolute;
+        min-width: 100px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        background-color: white;
+
+        span {
+            float: none;
+            color: black;
+            padding: 10px 12px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+
+            &:hover {
+                background-color: #ddd;
+            }
+        }
+    }
+}
+
+.app__navbar-dropdown:hover .app__navbar-dropdown-content {
+    display: block;
+}
+
+.app__navbar-search {
+    @media screen and (max-width: 1115px) {
+        display: none;
+    }
+}
+
+.app__navbar-user {
+    display: flex;
+    align-items: center;
+
+    svg {
+        font-size: 20px;
+        cursor: pointer;
+
+        &:hover {
+            color: #27e485;
+        }
+    }
+
+    button {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 27px;
+        text-align: center;
+        border: none;
+        background: none;
+        color: #00AB55;
+        cursor: pointer;
+        margin-left: 10px;
+        padding: 1px 5px;
+
+        &:hover {
+            color: #27e485;
+        }
+
+        &:nth-child(3) {
+            border: 2px solid #00AB55;
+            border-radius: 5px;
+
+            &:hover {
+                color: white;
+                background-color: #00AB55;
+            }
+        }
+    }
+}
