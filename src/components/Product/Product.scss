@@ -1,0 +1,121 @@
+.app__card {
+    box-sizing: border-box;
+    padding: 12px;
+    width: 250px;
+    height: 298px;
+    background: #FFFFFF;
+    border: 1px solid #E0E9FF;
+    border-radius: 12px;
+    position: relative;
+
+    .promoted {
+        width: 70px;
+        height: 19px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 0.02em;
+        color: #FFFFFF;
+        background: linear-gradient(92.72deg, #F1683D 0%, #F13D3D 100%);
+        border-radius: 0px 6px 6px 0px;
+        padding: 1px 3px;
+        position: absolute;
+        top: 13px;
+        left: -10px;
+        z-index: 1;
+    }
+
+    .discount {
+        position: absolute;
+        padding: 0px 8px;
+        left: 0px;
+        top: 128px;
+        background: linear-gradient(92.72deg, #398FCD 0%, #3459DA 100%);
+        border-radius: 0px 6px 6px 0px;
+        width: 60px;
+        height: 22px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-size: 14px;
+        color: white;
+        z-index: 1;
+    }
+
+    .vector {
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 7px solid #6A201F;
+        position: absolute;
+        transform: rotate(221deg);
+        left: -9px;
+        top: 31px;
+    }
+
+    @media screen and(max-width: 750px) {
+        width: 224px;
+        height: 294px;
+    }
+}
+
+.app__card-header {
+    display: flex;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(249, 236, 201, 0.27) 0%, #F9ECC9 100%);
+    border-radius: 12px;
+
+    img {
+        width: 100%;
+        height: 175px;
+        border-radius: 10px;
+        opacity: 0.4;
+    }
+}
+
+.app__card-body {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #344863;
+
+    p {
+        height: 45px;
+        margin-top: 5px;
+    }
+
+    div {
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 6px;
+            gap: 8px;
+            width: 94px;
+            height: 36px;
+            background: rgba(0, 171, 85, 0.08);
+            border-radius: 6px;
+            border: none;
+            color: #00AB55;
+
+            svg {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .rating {
+        display: flex;
+        flex-direction: column;
+
+        p {
+            color: #A8B1C1;
+        }
+    }
+}

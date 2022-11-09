@@ -1,0 +1,58 @@
+.app__accordion-item {
+    width: 100%;
+    font-size: 1rem;
+    font-family: 'poppins';
+}
+
+.app__accordion-title {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+        color: #6C7B97;
+        font-size: 14px;
+    }
+
+    .close-arrow {
+        transform: rotate(-90deg);
+    }
+
+    div {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+        color: #6C7B97;
+        width: 200px;
+
+        @media screen and(max-width: 1000px) {
+            width: 165px;
+        }
+    }
+}
+
+.app__accordion-content {
+    ul {
+        list-style: none;
+
+        li {
+            margin: 5px 0px;
+
+            a {
+                text-decoration: none;
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 21px;
+                color: #6C7B97;
+
+                &:hover {
+                    color: rgb(0, 171, 85);
+                }
+            }
+        }
+    }
+}

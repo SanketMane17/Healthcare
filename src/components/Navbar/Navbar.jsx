@@ -20,7 +20,7 @@ const menu = [
     }
 ]
 
-function Navbar() {
+function Navbar({ hover, setHover }) {
     const [currTab, setCurrTab] = useState("lab");
 
     const handleBtn = (e) => {
@@ -31,7 +31,12 @@ function Navbar() {
         <nav className="app__navbar">
             <ul className="app__navbar-list">
                 {menu.map((item) => (
-                    <div className="app__navbar-dropdown" key={item.name}>
+                    <div
+                        className="app__navbar-dropdown"
+                        key={item.name}
+                        onMouseOver={() => setHover(true)}
+                        onMouseLeave={() => setHover(false)}
+                    >
                         <button
                             value={item.name.split(" ")[0].toLocaleLowerCase()}
                             onClick={handleBtn}

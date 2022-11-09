@@ -11,6 +11,7 @@
 
 .app__header {
     display: flex;
+    height: 34.7vh;
 }
 
 .app__header-content {
@@ -85,16 +86,26 @@
     @media screen and(max-width: 970px) {
         width: 100%;
     }
+
+    @media screen and(min-width: 1300px) {
+        width: 210%;
+    }
 }
 
 .app__header-image {
 
     img {
-        width: 100%;
         height: 100%;
+        width: 100%;
 
         @media screen and(max-width: 970px) {
             display: none;
+        }
+    }
+
+    @media screen and(min-width: 970px) {
+        &:nth-child(2) {
+            width: 100%;
         }
     }
 }

@@ -1,0 +1,59 @@
+.app__offers {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 36px 180px 45px;
+    background: #F0F9F7;
+
+    h1 {
+        width: 807px;
+        height: 42px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 42px;
+        color: rgba(0, 82, 73, 0.8);
+    }
+
+    .list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 10px;
+
+        .item {
+            display: flex;
+            align-items: center;
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 12px;
+            margin-right: 30px;
+            width: 218px;
+
+            img {
+                width: 53px;
+                height: 50px;
+            }
+
+            div {
+                margin-left: 10px;
+
+                p {
+                    font-family: 'Poppins';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 27px;
+                    color: #344863;
+                }
+            }
+
+            @media screen and(max-width: 1190px) {
+                margin: 20px;
+            }
+        }
+    }
+}
