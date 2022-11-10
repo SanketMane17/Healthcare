@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Navbar, Offers, Products, Slider } from './components'
+import { Deals, Footer, Navbar, Offers, PopularProducts, Products, Slider } from './components'
 import { productList } from "./Data";
 import "./App.scss";
 
@@ -14,6 +14,9 @@ function App() {
         <Slider products={products} setProducts={setProducts}/>
         <Products products={products} setProducts={setProducts} />
         <Offers />
+        <PopularProducts />
+        <Deals />
+        <Footer />
       </div>
     </div>
   )

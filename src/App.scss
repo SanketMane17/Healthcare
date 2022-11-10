@@ -5,3 +5,16 @@
     opacity: 0.3;
     transition: all .5s;
 }
+
+.not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 42px;
+    color: hwb(324deg 19% 16%);
+}

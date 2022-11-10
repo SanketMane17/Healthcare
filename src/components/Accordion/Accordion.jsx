@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BsChevronDown } from "react-icons/bs";
 import "./Accordion.scss";
 
@@ -13,8 +13,12 @@ function Accordion({ item, setCategory, subCategory, setSubCategory, filterByCat
 
     const handleSubClick = (li) => {
         setSubCategory(li);
-        filterByCategory();
     }
+
+    useEffect(() => {
+        if (subCategory)
+            filterByCategory(subCategory);
+    }, [subCategory]);
 
     return (
         <div className='app__accordion'>
@@ -32,7 +36,6 @@ function Accordion({ item, setCategory, subCategory, setSubCategory, filterByCat
                         {list.map((li, index) => (
                             <li key={index}>
                                 <a
-                                    href="#"
                                     onClick={() => handleSubClick(li)}
                                     style={subCategory === li ? { color: "rgb(0, 171, 85)" } : {}}
                                 >

@@ -8,3 +8,6 @@ export {default as Accordion} from "./Accordion/Accordion";
 export {default as Rangeslider} from "./Rangeslider/Rangeslider";
 export {default as Offers} from "./Offers/Offers";
 export {default as Pagination} from "./Pagination/Pagination";
+export {default as PopularProducts} from "./PopularProducts/PopularProducts";
+export {default as Deals} from "./Deals/Deals";
+export {default as Footer} from "./Footer/Footer";

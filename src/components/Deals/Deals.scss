@@ -1,0 +1,116 @@
+.app__deals {
+    align-items: center;
+    padding: 36px 180px 45px;
+    position: relative;
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .arrows {
+            width: 67px;
+            display: flex;
+            justify-content: space-between;
+
+            svg {
+                border: 1px solid;
+                border-radius: 3px;
+                padding: 5px;
+                background: rgba(0, 171, 85, 0.08);
+                color: #00AB55;
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    h1 {
+        height: 42px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 42px;
+        color: rgba(0, 82, 73, 0.8);
+    }
+
+    .list {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+
+        .card-1,
+        .card-2 {
+            background: #E1FCEE;
+            border-radius: 20px;
+            padding: 25px;
+
+            h2 {
+                width: 398px;
+                height: 76px;
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 36px;
+                color: #344863;
+            }
+
+            p {
+                width: 398px;
+                height: 72px;
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 28px;
+                color: #3D8F8A;
+            }
+
+            button {
+                background: none;
+                width: 140px;
+                height: 39px;
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 17px;
+                line-height: 39px;
+                color: #344863;
+                border: navajowhite;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                cursor: pointer;
+            }
+        }
+
+        .card-2 {
+            background: #FEF7E4;
+
+            h2 {
+                height: 40px;
+            }
+
+            button {
+                color: #3D8F8A;
+            }
+        }
+
+        @media screen and(max-width: 1280px) {
+            overflow-x: auto;
+            overflow-y: hidden;
+            gap: 15px;
+
+            .card-1,
+            .card-2 {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    @media screen and(max-width: 1000px) {
+        padding: 36px 47px 45px;
+    }
+}

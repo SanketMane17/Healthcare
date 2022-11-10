@@ -1,0 +1,64 @@
+.app__footer {
+    background: #FFFFFF;
+    padding: 20px 183px;
+    display: flex;
+    justify-content: space-between;
+
+    .section-1 {
+        position: relative;
+
+        p {
+            font-family: 'Segoe UI';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 25px;
+            line-height: 30px;
+            color: #2E3585;
+        }
+
+        .small-ellipse {
+            position: absolute;
+            width: 7.24px;
+            top: 2.47px;
+            left: 119px;
+            bottom: 25.29px;
+            background: #5ABFE5;
+            height: 7px;
+            border-radius: 50%;
+        }
+
+        .big-ellipse {
+            position: absolute;
+            width: 10.7px;
+            top: -8.54px;
+            left: 125px;
+            bottom: 36.84px;
+            background: #5ABFE5;
+            height: 10px;
+            border-radius: 50%;
+        }
+    }
+
+    .section-2 {
+
+        p {
+            width: 311.26px;
+            height: 54px;
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 27px;
+            color: #7C7A8B;
+        }
+    }
+
+    .section-3 {
+        display: flex;
+        align-items: center;
+    }
+
+    @media screen and(max-width: 1000px) {
+        padding: 20px 43px;
+    }
+}

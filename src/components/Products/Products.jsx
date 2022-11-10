@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BsSearch } from "react-icons/bs";
 import { Product, Accordion, Rangeslider, Pagination } from '..';
 import "./Products.scss";
@@ -7,29 +7,44 @@ import { productList } from "../../Data";
 import { accordionData } from "../../Data";
 import { brands } from "../../Data";
 
-const productsPerPage = 12;
+const productsPerPage = 30;
 
 function Products({ products, setProducts }) {
     const [currentPage, setCurrentPage] = useState(1);
-    const [category, setCategory] = useState("Covid Essentials");
-    const [subCategory, setSubCategory] = useState("Covid-19 Preventatives");
+    const [category, setCategory] = useState("");
+    const [subCategory, setSubCategory] = useState("");
     const [sorting, setSorting] = useState("#");
+    const [selectedBrands, setBrands] = useState([]);
     const [range, setRange] = useState([30, 60]);
 
-    const handleChange = (e) => {
+    const handleSortChange = (e) => {
         setSorting(e.target.value);
     }
 
+    const handleBrands = (e) => {
+        let arr = [];
+        if (!selectedBrands.includes(e.target.value)) {
+            arr.push(e.target.value);
+            setBrands((prevBrands) => {
+                return [...prevBrands, ...arr];
+            });
+        } else {
+            arr = selectedBrands.filter(element => element !== e.target.value);
+            setBrands(arr);
+        }
+    }
+
+    // Sorting
     if (sorting === "popularity") {
-        products.sort((obj1, obj2) => obj1.ratings - obj2.ratings);
+        products.sort((obj1, obj2) => obj2.ratings - obj1.ratings);
     }
 
     if (sorting === "discount") {
-        products.sort((obj1, obj2) => obj1.discount - obj2.discount);
+        products.sort((obj1, obj2) => obj2.discount - obj1.discount);
     }
 
     if (sorting === "price") {
-        productList.sort((obj1, obj2) => obj1.price - obj2.price);
+        products.sort((obj1, obj2) => obj1.price - obj2.price);
     }
 
     if (sorting === "name") {
@@ -47,13 +62,31 @@ function Products({ products, setProducts }) {
     const currentProducts = products.slice(firstProductIndex, lastProductIndex);
 
     // Filter by category
-    const filterByCategory = () => {
-        const newProducts = productList.filter(product => product.category === subCategory)
+    const filterByCategory = (category) => {
+        const newProducts = productList.filter(product => product.category === category)
         setProducts(newProducts);
     }
 
+    // Filter by brands
+    const filterbyBrands = (selectedBrands) => {
+        const newProducts = productList.filter(product => {
+            for (let i = 0; i < selectedBrands.length; i++) {
+                if (product.brand === selectedBrands[i])
+                    return true;
+            }
+
+            return false;
+        });
+        setProducts(newProducts);
+    }
+
+    useEffect(() => {
+        if (selectedBrands.length)
+            filterbyBrands(selectedBrands);
+    }, [selectedBrands]);
+
     // Filter by range
-    const filterByRange = () => {
+    const filterByRange = (range) => {
         const newProducts = productList.filter(product => (product.price >= range[0] * 10 && product.price <= range[1] * 10));
         setProducts(newProducts);
     }
@@ -81,14 +114,14 @@ function Products({ products, setProducts }) {
                 </div>
                 <div className="container-2">
                     <div className="header">
-                        <p>Categories</p>
+                        <p>Brands</p>
                         <BsSearch />
                     </div>
                     <div className='app__brands'>
                         {brands.map((brand, index) => (
                             <div key={index}>
                                 <label className="container">{brand}
-                                    <input type="checkbox" />
+                                    <input type="checkbox" value={brand} onClick={handleBrands} />
                                     <span className="checkmark"></span>
                                 </label>
                                 <hr style={{ width: "215px", marginBottom: "15px" }} />
@@ -102,7 +135,7 @@ function Products({ products, setProducts }) {
                         <p>Price</p>
                         <div>₹{range[0] * 10} - ₹{range[1] * 10}</div>
                     </div>
-                    <Rangeslider range={range} setRange={setRange} filterByRange={filterByRange} products={products} />
+                    <Rangeslider range={range} setRange={setRange} filterByRange={filterByRange} />
                 </div>
             </div>
 
@@ -111,7 +144,7 @@ function Products({ products, setProducts }) {
                     <h2>Recommended Wellness Products</h2>
                     <div>
                         <p>Sort by: </p>
-                        <select name="choices" onChange={handleChange}>
+                        <select name="choices" onChange={handleSortChange}>
                             <option value="#">Select</option>
                             <option value="popularity">Popularity</option>
                             <option value="price">Price</option>
@@ -121,20 +154,30 @@ function Products({ products, setProducts }) {
                     </div>
                 </div>
                 <div className='app__products-body'>
-                    <h3>{category} - {subCategory}</h3>
-                    <div className="grid-container">
-                        {currentProducts.map((product, index) => (
-                            <Product product={product} key={index} />
-                        ))}
-                    </div>
+                    {category ? <h3>{category} - {subCategory}</h3> : <div style={{ marginTop: "10px" }}></div>}
+                    {products.length ? (
+                        <>
+                            <div className="grid-container">
+                                {currentProducts.map((product, index) => (
+                                    <Product product={product} key={index} />
+                                ))}
+                            </div>
+                            <hr />
+                        </>
+                    ) :
+                        (
+                            <h1 className='not-found'>Not found</h1>
+                        )}
                 </div>
                 <div className='app__products-footer'>
-                    <Pagination
-                        totalProducts={products.length}
-                        productsPerPage={productsPerPage}
-                        currentPage={currentPage}
-                        setCurrentPage={setCurrentPage}
-                    />
+                    {products.length ? (
+                        <Pagination
+                            totalProducts={products.length}
+                            productsPerPage={productsPerPage}
+                            currentPage={currentPage}
+                            setCurrentPage={setCurrentPage}
+                        />
+                    ) : ("")}
                 </div>
             </div>
         </div>

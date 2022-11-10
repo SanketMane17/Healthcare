@@ -6,8 +6,7 @@ import "./Rangeslider.scss";
 export default function ColorSlider({range, setRange, filterByRange}) {
     const handleChange = (event, newValue) => {
         setRange(newValue);
-
-        filterByRange();
+        filterByRange(range);
     };
 
     return (
@@ -16,6 +15,7 @@ export default function ColorSlider({range, setRange, filterByRange}) {
                 getAriaLabel={() => 'Price range'}
                 value={range}
                 onChange={handleChange}
+                style={{color: "#52af77"}}
             />
         </Box>
     );
