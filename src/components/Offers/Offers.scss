@@ -1,13 +1,31 @@
 .app__offers {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
     align-items: center;
     padding: 36px 180px 45px;
     background: #F0F9F7;
+    position: relative;
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .arrows {
+            width: 67px;
+            display: flex;
+            justify-content: space-between;
+
+            svg {
+                border: 1px solid;
+                border-radius: 3px;
+                padding: 5px;
+                background: rgba(0, 171, 85, 0.08);
+                color: #00AB55;
+            }
+        }
+
+    }
 
     h1 {
-        width: 807px;
         height: 42px;
         font-family: 'Poppins';
         font-style: normal;
@@ -20,7 +38,6 @@
     .list {
         display: flex;
         align-items: center;
-        justify-content: center;
         flex-wrap: wrap;
         margin-top: 10px;
 
@@ -30,8 +47,10 @@
             background: #FFFFFF;
             border-radius: 16px;
             padding: 12px;
-            margin-right: 30px;
+            margin-top: 20px;
+            margin-right: 20px;
             width: 218px;
+            box-shadow: -1px 3px 19px -3px rgba(0,0,0,0.75);
 
             img {
                 width: 53px;
@@ -50,10 +69,10 @@
                     color: #344863;
                 }
             }
+        }
 
-            @media screen and(max-width: 1190px) {
-                margin: 20px;
-            }
+        @media screen and(max-width: 885px) {
+            justify-content: center;
         }
     }
 }

@@ -1,0 +1,56 @@
+.app__pagination {
+    margin-top: 20px;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: 'Poppins';
+
+    div {
+        display: flex;
+        align-items: center;
+    }
+
+    p {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 27px;
+        color: #83919E;
+        width: 180px;
+    }
+
+    button {
+        color: #46494E;
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        background-color: white;
+        margin: 2px 5px;
+    }
+
+    .active {
+        background: #00AB55;
+        border-radius: 4px;
+        color: white;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        outline: none;
+        border: none;
+    }
+
+    svg {
+        cursor: pointer;
+        margin: 0px 25px;
+        color: #83919E;
+    }
+
+    @media screen and(max-width: 800px) {
+        flex-direction: column;
+    }
+}

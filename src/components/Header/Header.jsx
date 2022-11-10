@@ -2,11 +2,11 @@ import React from "react"
 import "./Header.scss";
 import Searchbar from "../Searchbar/Searchbar";
 
-function Header({off, img}) {
+function Header({ off, img, products, setProducts }) {
   return (
     <>
       <div className="app__search-mobile">
-        <Searchbar />
+        <Searchbar products={products} setProducts={setProducts} />
       </div>
       <div className='app__header'>
         <div className='app__header-content'>
@@ -19,7 +19,7 @@ function Header({off, img}) {
           </div>
         </div>
         <div className='app__header-image'>
-          <img src={img} alt="healthcare"/>
+          <img src={img} alt="healthcare" />
         </div>
       </div>
     </>

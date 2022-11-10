@@ -23,7 +23,7 @@ const slides = [
     }
 ]
 
-function Slider() {
+function Slider({products, setProducts}) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const goPrev = () => {
@@ -43,7 +43,12 @@ function Slider() {
             <button id="prev" onClick={goPrev}>
                 <BiLeftArrowCircle />
             </button>
-            <Header off={slides[currentIndex].off} img={slides[currentIndex].img}/>
+            <Header 
+            off={slides[currentIndex].off} 
+            img={slides[currentIndex].img}
+            products={products}
+            setProducts={setProducts}
+            />
             <button id="next" onClick={goNext}>
                 <BiRightArrowCircle />
             </button>

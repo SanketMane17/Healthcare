@@ -1,91 +1,824 @@
+import { images } from "../constants";
+
 const productList = [
     {
-        imgLink: "https://images.unsplash.com/photo-1633171031508-a8f26271e8aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+        imgLink: images.medicine1,
         name: "Kee PharmImmune Smart Capsule 60's",
         stars: 4.5,
         ratings: 2827,
         price: 389.25,
-        discount: 12
+        discount: 12,
+        category: "Covid-19 Preventatives"
     },
     {
-        imgLink: "https://images.unsplash.com/photo-1633171029787-3a1022cfc922?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+        imgLink: images.medicine2,
         name: "SBL Alfalfa Tonic Paediatric",
         stars: 4.5,
         ratings: 110,
         price: 149,
-        discount: 33
+        discount: 33,
+        category: "Food & Nutrition"
     },
     {
-        imgLink: "https://images.unsplash.com/photo-1633171036157-78d53387fdc0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+        imgLink: images.medicine4,
         name: "Dr. Reckeweg Silicea Dilution 200",
         stars: 4.6,
         ratings: 2300,
         price: 160,
-        discount: 45
+        discount: 45,
+        category: "Personal Hygiene"
     },
     {
-        imgLink: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80",
+        imgLink: images.medicine5,
         name: "Wheezal Baby Bliss Syrup",
         stars: 3.8,
         ratings: 1250,
         price: 350,
-        discount: 55
+        discount: 55,
+        category: "Immunity Boosters"
     },
     {
-        imgLink: "https://images.unsplash.com/photo-1550572017-26b5655c1e8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+        imgLink: images.medicine6,
         name: "SBL Kalmegh Paediatric Drop",
         stars: 4.1,
         ratings: 1153,
         price: 350,
-        discount: 9
+        discount: 9,
+        category: "Covid-19 Preventatives"
     },
     {
-        imgLink: "https://images.unsplash.com/photo-1620987278429-ab178d6eb547?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=725&q=80",
+        imgLink: images.medicine7,
         name: "Losartan",
         stars: 3,
         ratings: 245,
         price: 123.45,
-        discount: 56
+        discount: 56,
+        category: "Immunity Boosters"
     },
     {
-        imgLink: "https://images.unsplash.com/photo-1550572017-26b5655c1e8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+        imgLink: images.medicine1,
         name: "Antibiotics",
         stars: 2.5,
         ratings: 56,
         price: 675,
-        discount: 23
+        discount: 23,
+        category: "Personal Hygiene"
     },
     {
-        imgLink: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80",
+        imgLink: images.medicine2,
         name: "Albuterol",
         stars: 5,
         ratings: 1200,
         price: 250.69,
-        discount: 21
+        discount: 21,
+        category: "Food & Nutrition"
     },
     {
-        imgLink: "https://images.unsplash.com/photo-1633171031508-a8f26271e8aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+        imgLink: images.medicine4,
         name: "Gabapentin",
         stars: 4.2,
         ratings: 455,
         price: 123.45,
-        discount: 44
+        discount: 44,
+        category: "Personal Hygiene"
     },
     {
-        imgLink: "https://images.unsplash.com/photo-1633171031508-a8f26271e8aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+        imgLink: images.medicine5,
         name: "Kee PharmImmune Smart Capsule 60's",
         stars: 4.5,
         ratings: 1111,
         price: 455,
-        discount: 67
+        discount: 67,
+        category: "Covid-19 Preventatives"
     },
     {
-        imgLink: "https://images.unsplash.com/photo-1633171029787-3a1022cfc922?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+        imgLink: images.medicine6,
         name: "SBL Alfalfa Tonic Paediatric",
         stars: 2.5,
         ratings: 110,
         price: 149,
-        discount: 33
+        discount: 33,
+        category: "Food & Nutrition"
+    },
+    {
+        imgLink: images.medicine1,
+        name: "Kee PharmImmune Smart Capsule 60's",
+        stars: 4.5,
+        ratings: 2827,
+        price: 389.25,
+        discount: 12,
+        category: "Covid-19 Preventatives"
+    },
+    {
+        imgLink: images.medicine2,
+        name: "SBL Alfalfa Tonic Paediatric",
+        stars: 4.5,
+        ratings: 110,
+        price: 149,
+        discount: 33,
+        category: "Food & Nutrition"
+    },
+    {
+        imgLink: images.medicine4,
+        name: "Dr. Reckeweg Silicea Dilution 200",
+        stars: 4.6,
+        ratings: 2300,
+        price: 160,
+        discount: 45,
+        category: "Personal Hygiene"
+    },
+    {
+        imgLink: images.medicine5,
+        name: "Wheezal Baby Bliss Syrup",
+        stars: 3.8,
+        ratings: 1250,
+        price: 350,
+        discount: 55,
+        category: "Immunity Boosters"
+    },
+    {
+        imgLink: images.medicine6,
+        name: "SBL Kalmegh Paediatric Drop",
+        stars: 4.1,
+        ratings: 1153,
+        price: 350,
+        discount: 9,
+        category: "Covid-19 Preventatives"
+    },
+    {
+        imgLink: images.medicine7,
+        name: "Losartan",
+        stars: 3,
+        ratings: 245,
+        price: 123.45,
+        discount: 56,
+        category: "Immunity Boosters"
+    },
+    {
+        imgLink: images.medicine1,
+        name: "Antibiotics",
+        stars: 2.5,
+        ratings: 56,
+        price: 675,
+        discount: 23,
+        category: "Personal Hygiene"
+    },
+    {
+        imgLink: images.medicine2,
+        name: "Albuterol",
+        stars: 5,
+        ratings: 1200,
+        price: 250.69,
+        discount: 21,
+        category: "Food & Nutrition"
+    },
+    {
+        imgLink: images.medicine4,
+        name: "Gabapentin",
+        stars: 4.2,
+        ratings: 455,
+        price: 123.45,
+        discount: 44,
+        category: "Personal Hygiene"
+    },
+    {
+        imgLink: images.medicine5,
+        name: "Kee PharmImmune Smart Capsule 60's",
+        stars: 4.5,
+        ratings: 1111,
+        price: 455,
+        discount: 67,
+        category: "Covid-19 Preventatives"
+    },
+    {
+        imgLink: images.medicine6,
+        name: "SBL Alfalfa Tonic Paediatric",
+        stars: 2.5,
+        ratings: 110,
+        price: 149,
+        discount: 33,
+        category: "Food & Nutrition"
+    },
+    {
+        imgLink: images.medicine1,
+        name: "Kee PharmImmune Smart Capsule 60's",
+        stars: 4.5,
+        ratings: 2827,
+        price: 389.25,
+        discount: 12,
+        category: "Covid-19 Preventatives"
+    },
+    {
+        imgLink: images.medicine2,
+        name: "SBL Alfalfa Tonic Paediatric",
+        stars: 4.5,
+        ratings: 110,
+        price: 149,
+        discount: 33,
+        category: "Food & Nutrition"
+    },
+    {
+        imgLink: images.medicine4,
+        name: "Dr. Reckeweg Silicea Dilution 200",
+        stars: 4.6,
+        ratings: 2300,
+        price: 160,
+        discount: 45,
+        category: "Personal Hygiene"
+    },
+    {
+        imgLink: images.medicine5,
+        name: "Wheezal Baby Bliss Syrup",
+        stars: 3.8,
+        ratings: 1250,
+        price: 350,
+        discount: 55,
+        category: "Immunity Boosters"
+    },
+    {
+        imgLink: images.medicine6,
+        name: "SBL Kalmegh Paediatric Drop",
+        stars: 4.1,
+        ratings: 1153,
+        price: 350,
+        discount: 9,
+        category: "Covid-19 Preventatives"
+    },
+    {
+        imgLink: images.medicine7,
+        name: "Losartan",
+        stars: 3,
+        ratings: 245,
+        price: 123.45,
+        discount: 56,
+        category: "Immunity Boosters"
+    },
+    {
+        imgLink: images.medicine1,
+        name: "Antibiotics",
+        stars: 2.5,
+        ratings: 56,
+        price: 675,
+        discount: 23,
+        category: "Personal Hygiene"
+    },
+    {
+        imgLink: images.medicine2,
+        name: "Albuterol",
+        stars: 5,
+        ratings: 1200,
+        price: 250.69,
+        discount: 21,
+        category: "Food & Nutrition"
+    },
+    {
+        imgLink: images.medicine4,
+        name: "Gabapentin",
+        stars: 4.2,
+        ratings: 455,
+        price: 123.45,
+        discount: 44,
+        category: "Personal Hygiene"
+    },
+    {
+        imgLink: images.medicine5,
+        name: "Kee PharmImmune Smart Capsule 60's",
+        stars: 4.5,
+        ratings: 1111,
+        price: 455,
+        discount: 67,
+        category: "Covid-19 Preventatives"
+    },
+    {
+        imgLink: images.medicine6,
+        name: "SBL Alfalfa Tonic Paediatric",
+        stars: 2.5,
+        ratings: 110,
+        price: 149,
+        discount: 33,
+        category: "Food & Nutrition"
+    },
+    {
+        imgLink: images.medicine1,
+        name: "Kee PharmImmune Smart Capsule 60's",
+        stars: 4.5,
+        ratings: 2827,
+        price: 389.25,
+        discount: 12,
+        category: "Covid-19 Preventatives"
+    },
+    {
+        imgLink: images.medicine2,
+        name: "SBL Alfalfa Tonic Paediatric",
+        stars: 4.5,
+        ratings: 110,
+        price: 149,
+        discount: 33,
+        category: "Food & Nutrition"
+    },
+    {
+        imgLink: images.medicine4,
+        name: "Dr. Reckeweg Silicea Dilution 200",
+        stars: 4.6,
+        ratings: 2300,
+        price: 160,
+        discount: 45,
+        category: "Personal Hygiene"
+    },
+    {
+        imgLink: images.medicine5,
+        name: "Wheezal Baby Bliss Syrup",
+        stars: 3.8,
+        ratings: 1250,
+        price: 350,
+        discount: 55,
+        category: "Immunity Boosters"
+    },
+    {
+        imgLink: images.medicine6,
+        name: "SBL Kalmegh Paediatric Drop",
+        stars: 4.1,
+        ratings: 1153,
+        price: 350,
+        discount: 9,
+        category: "Covid-19 Preventatives"
+    },
+    {
+        imgLink: images.medicine7,
+        name: "Losartan",
+        stars: 3,
+        ratings: 245,
+        price: 123.45,
+        discount: 56,
+        category: "Immunity Boosters"
+    },
+    {
+        imgLink: images.medicine1,
+        name: "Antibiotics",
+        stars: 2.5,
+        ratings: 56,
+        price: 675,
+        discount: 23,
+        category: "Personal Hygiene"
+    },
+    {
+        imgLink: images.medicine2,
+        name: "Albuterol",
+        stars: 5,
+        ratings: 1200,
+        price: 250.69,
+        discount: 21,
+        category: "Food & Nutrition"
+    },
+    {
+        imgLink: images.medicine4,
+        name: "Gabapentin",
+        stars: 4.2,
+        ratings: 455,
+        price: 123.45,
+        discount: 44,
+        category: "Personal Hygiene"
+    },
+    {
+        imgLink: images.medicine5,
+        name: "Kee PharmImmune Smart Capsule 60's",
+        stars: 4.5,
+        ratings: 1111,
+        price: 455,
+        discount: 67,
+        category: "Covid-19 Preventatives"
+    },
+    {
+        imgLink: images.medicine6,
+        name: "SBL Alfalfa Tonic Paediatric",
+        stars: 2.5,
+        ratings: 110,
+        price: 149,
+        discount: 33,
+        category: "Food & Nutrition"
+    },
+    {
+        imgLink: images.medicine1,
+        name: "Kee PharmImmune Smart Capsule 60's",
+        stars: 4.5,
+        ratings: 2827,
+        price: 389.25,
+        discount: 12,
+        category: "Covid-19 Preventatives"
+    },
+    {
+        imgLink: images.medicine2,
+        name: "SBL Alfalfa Tonic Paediatric",
+        stars: 4.5,
+        ratings: 110,
+        price: 149,
+        discount: 33,
+        category: "Food & Nutrition"
+    },
+    {
+        imgLink: images.medicine4,
+        name: "Dr. Reckeweg Silicea Dilution 200",
+        stars: 4.6,
+        ratings: 2300,
+        price: 160,
+        discount: 45,
+        category: "Personal Hygiene"
+    },
+    {
+        imgLink: images.medicine5,
+        name: "Wheezal Baby Bliss Syrup",
+        stars: 3.8,
+        ratings: 1250,
+        price: 350,
+        discount: 55,
+        category: "Immunity Boosters"
+    },
+    {
+        imgLink: images.medicine6,
+        name: "SBL Kalmegh Paediatric Drop",
+        stars: 4.1,
+        ratings: 1153,
+        price: 350,
+        discount: 9,
+        category: "Covid-19 Preventatives"
+    },
+    {
+        imgLink: images.medicine7,
+        name: "Losartan",
+        stars: 3,
+        ratings: 245,
+        price: 123.45,
+        discount: 56,
+        category: "Immunity Boosters"
+    },
+    {
+        imgLink: images.medicine1,
+        name: "Antibiotics",
+        stars: 2.5,
+        ratings: 56,
+        price: 675,
+        discount: 23,
+        category: "Personal Hygiene"
+    },
+    {
+        imgLink: images.medicine2,
+        name: "Albuterol",
+        stars: 5,
+        ratings: 1200,
+        price: 250.69,
+        discount: 21,
+        category: "Food & Nutrition"
+    },
+    {
+        imgLink: images.medicine4,
+        name: "Gabapentin",
+        stars: 4.2,
+        ratings: 455,
+        price: 123.45,
+        discount: 44,
+        category: "Personal Hygiene"
+    },
+    {
+        imgLink: images.medicine5,
+        name: "Kee PharmImmune Smart Capsule 60's",
+        stars: 4.5,
+        ratings: 1111,
+        price: 455,
+        discount: 67,
+        category: "Covid-19 Preventatives"
+    },
+    {
+        imgLink: images.medicine6,
+        name: "SBL Alfalfa Tonic Paediatric",
+        stars: 2.5,
+        ratings: 110,
+        price: 149,
+        discount: 33,
+        category: "Food & Nutrition"
+    },
+    {
+        imgLink: images.medicine1,
+        name: "Kee PharmImmune Smart Capsule 60's",
+        stars: 4.5,
+        ratings: 2827,
+        price: 389.25,
+        discount: 12,
+        category: "Covid-19 Preventatives"
+    },
+    {
+        imgLink: images.medicine2,
+        name: "SBL Alfalfa Tonic Paediatric",
+        stars: 4.5,
+        ratings: 110,
+        price: 149,
+        discount: 33,
+        category: "Food & Nutrition"
+    },
+    {
+        imgLink: images.medicine4,
+        name: "Dr. Reckeweg Silicea Dilution 200",
+        stars: 4.6,
+        ratings: 2300,
+        price: 160,
+        discount: 45,
+        category: "Personal Hygiene"
+    },
+    {
+        imgLink: images.medicine5,
+        name: "Wheezal Baby Bliss Syrup",
+        stars: 3.8,
+        ratings: 1250,
+        price: 350,
+        discount: 55,
+        category: "Immunity Boosters"
+    },
+    {
+        imgLink: images.medicine6,
+        name: "SBL Kalmegh Paediatric Drop",
+        stars: 4.1,
+        ratings: 1153,
+        price: 350,
+        discount: 9,
+        category: "Covid-19 Preventatives"
+    },
+    {
+        imgLink: images.medicine7,
+        name: "Losartan",
+        stars: 3,
+        ratings: 245,
+        price: 123.45,
+        discount: 56,
+        category: "Immunity Boosters"
+    },
+    {
+        imgLink: images.medicine1,
+        name: "Antibiotics",
+        stars: 2.5,
+        ratings: 56,
+        price: 675,
+        discount: 23,
+        category: "Personal Hygiene"
+    },
+    {
+        imgLink: images.medicine2,
+        name: "Albuterol",
+        stars: 5,
+        ratings: 1200,
+        price: 250.69,
+        discount: 21,
+        category: "Food & Nutrition"
+    },
+    {
+        imgLink: images.medicine4,
+        name: "Gabapentin",
+        stars: 4.2,
+        ratings: 455,
+        price: 123.45,
+        discount: 44,
+        category: "Personal Hygiene"
+    },
+    {
+        imgLink: images.medicine5,
+        name: "Kee PharmImmune Smart Capsule 60's",
+        stars: 4.5,
+        ratings: 1111,
+        price: 455,
+        discount: 67,
+        category: "Covid-19 Preventatives"
+    },
+    {
+        imgLink: images.medicine6,
+        name: "SBL Alfalfa Tonic Paediatric",
+        stars: 2.5,
+        ratings: 110,
+        price: 149,
+        discount: 33,
+        category: "Food & Nutrition"
+    },
+    {
+        imgLink: images.medicine1,
+        name: "Kee PharmImmune Smart Capsule 60's",
+        stars: 4.5,
+        ratings: 2827,
+        price: 389.25,
+        discount: 12,
+        category: "Covid-19 Preventatives"
+    },
+    {
+        imgLink: images.medicine2,
+        name: "SBL Alfalfa Tonic Paediatric",
+        stars: 4.5,
+        ratings: 110,
+        price: 149,
+        discount: 33,
+        category: "Food & Nutrition"
+    },
+    {
+        imgLink: images.medicine4,
+        name: "Dr. Reckeweg Silicea Dilution 200",
+        stars: 4.6,
+        ratings: 2300,
+        price: 160,
+        discount: 45,
+        category: "Personal Hygiene"
+    },
+    {
+        imgLink: images.medicine5,
+        name: "Wheezal Baby Bliss Syrup",
+        stars: 3.8,
+        ratings: 1250,
+        price: 350,
+        discount: 55,
+        category: "Immunity Boosters"
+    },
+    {
+        imgLink: images.medicine6,
+        name: "SBL Kalmegh Paediatric Drop",
+        stars: 4.1,
+        ratings: 1153,
+        price: 350,
+        discount: 9,
+        category: "Covid-19 Preventatives"
+    },
+    {
+        imgLink: images.medicine7,
+        name: "Losartan",
+        stars: 3,
+        ratings: 245,
+        price: 123.45,
+        discount: 56,
+        category: "Immunity Boosters"
+    },
+    {
+        imgLink: images.medicine1,
+        name: "Antibiotics",
+        stars: 2.5,
+        ratings: 56,
+        price: 675,
+        discount: 23,
+        category: "Personal Hygiene"
+    },
+    {
+        imgLink: images.medicine2,
+        name: "Albuterol",
+        stars: 5,
+        ratings: 1200,
+        price: 250.69,
+        discount: 21,
+        category: "Food & Nutrition"
+    },
+    {
+        imgLink: images.medicine4,
+        name: "Gabapentin",
+        stars: 4.2,
+        ratings: 455,
+        price: 123.45,
+        discount: 44,
+        category: "Personal Hygiene"
+    },
+    {
+        imgLink: images.medicine5,
+        name: "Kee PharmImmune Smart Capsule 60's",
+        stars: 4.5,
+        ratings: 1111,
+        price: 455,
+        discount: 67,
+        category: "Covid-19 Preventatives"
+    },
+    {
+        imgLink: images.medicine6,
+        name: "SBL Alfalfa Tonic Paediatric",
+        stars: 2.5,
+        ratings: 110,
+        price: 149,
+        discount: 33,
+        category: "Food & Nutrition"
+    },
+    {
+        imgLink: images.medicine1,
+        name: "Kee PharmImmune Smart Capsule 60's",
+        stars: 4.5,
+        ratings: 2827,
+        price: 389.25,
+        discount: 12,
+        category: "Covid-19 Preventatives"
+    },
+    {
+        imgLink: images.medicine2,
+        name: "SBL Alfalfa Tonic Paediatric",
+        stars: 4.5,
+        ratings: 110,
+        price: 149,
+        discount: 33,
+        category: "Food & Nutrition"
+    },
+    {
+        imgLink: images.medicine4,
+        name: "Dr. Reckeweg Silicea Dilution 200",
+        stars: 4.6,
+        ratings: 2300,
+        price: 160,
+        discount: 45,
+        category: "Personal Hygiene"
+    },
+    {
+        imgLink: images.medicine5,
+        name: "Wheezal Baby Bliss Syrup",
+        stars: 3.8,
+        ratings: 1250,
+        price: 350,
+        discount: 55,
+        category: "Immunity Boosters"
+    },
+    {
+        imgLink: images.medicine6,
+        name: "SBL Kalmegh Paediatric Drop",
+        stars: 4.1,
+        ratings: 1153,
+        price: 350,
+        discount: 9,
+        category: "Covid-19 Preventatives"
+    },
+    {
+        imgLink: images.medicine7,
+        name: "Losartan",
+        stars: 3,
+        ratings: 245,
+        price: 123.45,
+        discount: 56,
+        category: "Immunity Boosters"
+    },
+    {
+        imgLink: images.medicine1,
+        name: "Antibiotics",
+        stars: 2.5,
+        ratings: 56,
+        price: 675,
+        discount: 23,
+        category: "Personal Hygiene"
+    },
+    {
+        imgLink: images.medicine2,
+        name: "Albuterol",
+        stars: 5,
+        ratings: 1200,
+        price: 250.69,
+        discount: 21,
+        category: "Food & Nutrition"
+    },
+    {
+        imgLink: images.medicine4,
+        name: "Gabapentin",
+        stars: 4.2,
+        ratings: 455,
+        price: 123.45,
+        discount: 44,
+        category: "Personal Hygiene"
+    },
+    {
+        imgLink: images.medicine5,
+        name: "Kee PharmImmune Smart Capsule 60's",
+        stars: 4.5,
+        ratings: 1111,
+        price: 455,
+        discount: 67,
+        category: "Covid-19 Preventatives"
+    },
+    {
+        imgLink: images.medicine6,
+        name: "SBL Alfalfa Tonic Paediatric",
+        stars: 2.5,
+        ratings: 110,
+        price: 149,
+        discount: 33,
+        category: "Food & Nutrition"
+    },
+    {
+        imgLink: images.medicine4,
+        name: "Gabapentin",
+        stars: 4.2,
+        ratings: 455,
+        price: 123.45,
+        discount: 44,
+        category: "Personal Hygiene"
+    },
+    {
+        imgLink: images.medicine5,
+        name: "Kee PharmImmune Smart Capsule 60's",
+        stars: 4.5,
+        ratings: 1111,
+        price: 455,
+        discount: 67,
+        category: "Covid-19 Preventatives"
+    },
+    {
+        imgLink: images.medicine6,
+        name: "SBL Alfalfa Tonic Paediatric",
+        stars: 2.5,
+        ratings: 110,
+        price: 149,
+        discount: 33,
+        category: "Food & Nutrition"
     }
 ];
 

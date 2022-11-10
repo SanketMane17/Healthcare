@@ -5,7 +5,7 @@ const accordionData = [
     },
     {
         title: 'Personal Care',
-        list: ["Covid-19 Preventatives", "Food & Nutrition", "Personal Hygiene", "Immunity Boosters"]
+        list: ["Shampoos", "Lipsticks", "Perfumes", "Skin moisturizers"]
     },
     {
         title: 'Food & Drinks',
@@ -30,19 +30,7 @@ const accordionData = [
     {
         title: 'Surgical & Dressings',
         list: ["Covid-19 Preventatives", "Food & Nutrition", "Personal Hygiene", "Immunity Boosters"]
-    },
-    {
-        title: 'Health Condition',
-        list: ["Covid-19 Preventatives", "Food & Nutrition", "Personal Hygiene", "Immunity Boosters"]
-    },
-    {
-        title: 'Diabetic Care',
-        list: ["Covid-19 Preventatives", "Food & Nutrition", "Personal Hygiene", "Immunity Boosters"]
-    },
-    {
-        title: 'Elderly Care',
-        list: ["Covid-19 Preventatives", "Food & Nutrition", "Personal Hygiene", "Immunity Boosters"]
-    },
+    }
 ];
 
 export default accordionData;

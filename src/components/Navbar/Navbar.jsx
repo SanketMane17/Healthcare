@@ -20,7 +20,7 @@ const menu = [
     }
 ]
 
-function Navbar({ hover, setHover }) {
+function Navbar({ hover, setHover, products, setProducts }) {
     const [currTab, setCurrTab] = useState("lab");
 
     const handleBtn = (e) => {
@@ -54,7 +54,7 @@ function Navbar({ hover, setHover }) {
                 ))}
             </ul>
             <div className="app__navbar-search">
-                <Searchbar />
+                <Searchbar products={products} setProducts={setProducts}/>
             </div>
             <div className="app__navbar-user">
                 <AiOutlineShoppingCart className="default-color" />

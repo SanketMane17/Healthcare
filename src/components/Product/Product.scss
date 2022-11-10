@@ -63,15 +63,27 @@
 
 .app__card-header {
     display: flex;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(249, 236, 201, 0.27) 0%, #F9ECC9 100%);
     border-radius: 12px;
+    position: relative;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(249, 236, 201, 0.27) 0%, #F9ECC9 100%);
 
     img {
         width: 100%;
         height: 175px;
         border-radius: 10px;
-        opacity: 0.4;
     }
+
+    // &::after {
+    //     content: "";
+    //     display: block;
+    //     width: 100%;
+    //     height: 100%;
+    //     background: radial-gradient(50% 50% at 50% 50%, rgba(249, 236, 201, 0.27) 0%, #F9ECC9 100%);
+    //     border-radius: 12px;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    // }
 }
 
 .app__card-body {
@@ -106,6 +118,12 @@
 
             svg {
                 font-size: 18px;
+            }
+
+            &:hover {
+                background: #00AB55;
+                color: white;
+                cursor: pointer;
             }
         }
     }

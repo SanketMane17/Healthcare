@@ -5,4 +5,6 @@ export {default as Slider} from "./Slider/Slider";
 export {default as Product} from "./Product/Product";
 export {default as Products} from "./Products/Products";
 export {default as Accordion} from "./Accordion/Accordion";
+export {default as Rangeslider} from "./Rangeslider/Rangeslider";
 export {default as Offers} from "./Offers/Offers";
+export {default as Pagination} from "./Pagination/Pagination";

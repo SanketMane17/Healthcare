@@ -1,0 +1,15 @@
+.app__rangeslider {
+    .css-14pt78w-MuiSlider-rail {
+        background: rgba(0, 171, 85, 0.24) !important;
+    }
+
+    .css-187mznn-MuiSlider-root {
+        color:  #00AB55 !important;
+    }
+}
+
+@media screen and(max-width: 1000px) {
+    .app__rangeslider .css-187mznn-MuiSlider-root {
+        width: 172px;
+    }
+}

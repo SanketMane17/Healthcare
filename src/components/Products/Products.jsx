@@ -1,16 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { BsSearch } from "react-icons/bs";
-import { Product, Accordion } from '..';
+import { Product, Accordion, Rangeslider, Pagination } from '..';
 import "./Products.scss";
 
 import { productList } from "../../Data";
 import { accordionData } from "../../Data";
 import { brands } from "../../Data";
 
-function Products() {
-    const [products, setProducts] = useState(productList);
-    const [selectedCategory, setSelectedCategory] = useState("Food & Nutrition");
+const productsPerPage = 12;
+
+function Products({ products, setProducts }) {
+    const [currentPage, setCurrentPage] = useState(1);
+    const [category, setCategory] = useState("Covid Essentials");
+    const [subCategory, setSubCategory] = useState("Covid-19 Preventatives");
     const [sorting, setSorting] = useState("#");
+    const [range, setRange] = useState([30, 60]);
 
     const handleChange = (e) => {
         setSorting(e.target.value);
@@ -29,13 +33,29 @@ function Products() {
     }
 
     if (sorting === "name") {
-
         products.sort((obj1, obj2) => {
             if (obj1.name.split(" ")[0].toLocaleLowerCase() < obj2.name.split(" ")[0].toLocaleLowerCase())
                 return -1;
             else
                 return 1;
         });
+    }
+
+    // Pagination
+    const lastProductIndex = currentPage * productsPerPage;
+    const firstProductIndex = lastProductIndex - productsPerPage;
+    const currentProducts = products.slice(firstProductIndex, lastProductIndex);
+
+    // Filter by category
+    const filterByCategory = () => {
+        const newProducts = productList.filter(product => product.category === subCategory)
+        setProducts(newProducts);
+    }
+
+    // Filter by range
+    const filterByRange = () => {
+        const newProducts = productList.filter(product => (product.price >= range[0] * 10 && product.price <= range[1] * 10));
+        setProducts(newProducts);
     }
 
     return (
@@ -50,8 +70,10 @@ function Products() {
                         <div key={index}>
                             <Accordion
                                 item={item}
-                                selectedCategory={selectedCategory}
-                                setSelectedCategory={setSelectedCategory}
+                                setCategory={setCategory}
+                                subCategory={subCategory}
+                                setSubCategory={setSubCategory}
+                                filterByCategory={filterByCategory}
                             />
                             <hr />
                         </div>
@@ -75,6 +97,13 @@ function Products() {
                         <span>+12 more</span>
                     </div>
                 </div>
+                <div className='container-3'>
+                    <div className="header">
+                        <p>Price</p>
+                        <div>₹{range[0] * 10} - ₹{range[1] * 10}</div>
+                    </div>
+                    <Rangeslider range={range} setRange={setRange} filterByRange={filterByRange} products={products} />
+                </div>
             </div>
 
             <div className='app__products-list'>
@@ -91,11 +120,21 @@ function Products() {
                         </select>
                     </div>
                 </div>
-                <h3>Covid Essentials - {selectedCategory}</h3>
-                <div className="grid-container">
-                    {products.map((product, index) => (
-                        <Product product={product} key={index} />
-                    ))}
+                <div className='app__products-body'>
+                    <h3>{category} - {subCategory}</h3>
+                    <div className="grid-container">
+                        {currentProducts.map((product, index) => (
+                            <Product product={product} key={index} />
+                        ))}
+                    </div>
+                </div>
+                <div className='app__products-footer'>
+                    <Pagination
+                        totalProducts={products.length}
+                        productsPerPage={productsPerPage}
+                        currentPage={currentPage}
+                        setCurrentPage={setCurrentPage}
+                    />
                 </div>
             </div>
         </div>
