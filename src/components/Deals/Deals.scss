@@ -1,5 +1,4 @@
 .app__deals {
-    align-items: center;
     padding: 36px 180px 45px;
     position: relative;
 
@@ -45,9 +44,9 @@
             background: #E1FCEE;
             border-radius: 20px;
             padding: 25px;
+            width: 43%;
 
             h2 {
-                width: 398px;
                 height: 76px;
                 font-family: 'Poppins';
                 font-style: normal;
@@ -58,7 +57,6 @@
             }
 
             p {
-                width: 398px;
                 height: 72px;
                 font-family: 'Poppins';
                 font-style: normal;
@@ -83,6 +81,17 @@
                 align-items: center;
                 justify-content: space-around;
                 cursor: pointer;
+            }
+
+            @media screen and(min-width: 1175px) {
+
+                h2 {
+                    width: 398px;
+                }
+
+                p {
+                    width: 398px;
+                }
             }
         }
 

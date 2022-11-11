@@ -39,11 +39,10 @@
 
         display: flex;
         gap: 15px;
+        overflow-x: auto;
+        overflow-y: hidden;
 
         @media screen and(max-width: 1600px) {
-            overflow-x: auto;
-            overflow-y: hidden;
-
             .app__card {
                 margin-bottom: 20px;
             }

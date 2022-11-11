@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Deals, Footer, Navbar, Offers, PopularProducts, Products, Slider } from './components'
+import { Deals, About, Footer, Navbar, Offers, PopularProducts, Products, Slider } from './components'
 import { productList } from "./Data";
 import "./App.scss";
 
@@ -16,6 +16,7 @@ function App() {
         <Offers />
         <PopularProducts />
         <Deals />
+        <About />
         <Footer />
       </div>
     </div>

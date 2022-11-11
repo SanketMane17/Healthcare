@@ -2,38 +2,19 @@ import React, { useState } from 'react'
 import Header from '../Header/Header';
 import { BiLeftArrowCircle, BiRightArrowCircle } from "react-icons/bi";
 import "./Slider.scss";
-import { images } from '../../constants';
+import heroSlides from '../../Data/slides';
 
-const slides = [
-    {
-        off: 20,
-        img: images.healthcare
-    },
-    { 
-        off: 35,
-        img: images.healthcare1
-    },
-    {
-        off: 40,
-        img: images.healthcare2
-    },
-    {
-        off: 50,
-        img: images.healthcare1
-    }
-]
-
-function Slider({products, setProducts}) {
+function Slider({ products, setProducts }) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const goPrev = () => {
         const isFirstSlide = currentIndex === 0;
-        const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+        const newIndex = isFirstSlide ? heroSlides.length - 1 : currentIndex - 1;
         setCurrentIndex(newIndex);
     }
 
     const goNext = () => {
-        const isLastSlide = currentIndex === slides.length - 1;
+        const isLastSlide = currentIndex === heroSlides.length - 1;
         const newIndex = isLastSlide ? 0 : currentIndex + 1;
         setCurrentIndex(newIndex);
     }
@@ -43,17 +24,17 @@ function Slider({products, setProducts}) {
             <button id="prev" onClick={goPrev}>
                 <BiLeftArrowCircle />
             </button>
-            <Header 
-            off={slides[currentIndex].off} 
-            img={slides[currentIndex].img}
-            products={products}
-            setProducts={setProducts}
+            <Header
+                off={heroSlides[currentIndex].off}
+                img={heroSlides[currentIndex].img}
+                products={products}
+                setProducts={setProducts}
             />
             <button id="next" onClick={goNext}>
                 <BiRightArrowCircle />
             </button>
             <div className="app__slider-dots">
-                {slides.map((slide, slideIndex) => (
+                {heroSlides.map((slide, slideIndex) => (
                     <div key={slideIndex} style={slideIndex === currentIndex ? { backgroundColor: "white" } : {}} onClick={() => setCurrentIndex(slideIndex)}></div>
                 ))}
             </div>

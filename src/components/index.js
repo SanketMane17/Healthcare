@@ -11,3 +11,4 @@ export {default as Pagination} from "./Pagination/Pagination";
 export {default as PopularProducts} from "./PopularProducts/PopularProducts";
 export {default as Deals} from "./Deals/Deals";
 export {default as Footer} from "./Footer/Footer";
+export {default as About} from "./About/About";

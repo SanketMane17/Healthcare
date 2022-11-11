@@ -69,20 +69,24 @@ function Products({ products, setProducts }) {
 
     // Filter by brands
     const filterbyBrands = (selectedBrands) => {
-        const newProducts = productList.filter(product => {
-            for (let i = 0; i < selectedBrands.length; i++) {
-                if (product.brand === selectedBrands[i])
-                    return true;
-            }
 
-            return false;
-        });
-        setProducts(newProducts);
+        if (selectedBrands.length) {
+            const newProducts = productList.filter(product => {
+                for (let i = 0; i < selectedBrands.length; i++) {
+                    if (product.brand === selectedBrands[i])
+                        return true;
+                }
+
+                return false;
+            });
+            setProducts(newProducts);
+        } else {
+            setProducts(productList);
+        }
     }
 
     useEffect(() => {
-        if (selectedBrands.length)
-            filterbyBrands(selectedBrands);
+        filterbyBrands(selectedBrands);
     }, [selectedBrands]);
 
     // Filter by range

@@ -1,0 +1,39 @@
+.app__about {
+    background: #F0F9F7;
+    padding: 36px 180px 45px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    div {
+        font-family: 'Poppins';
+        font-style: normal;
+
+        h2 {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 36px;
+            color: rgba(0, 82, 73, 0.8);
+        }
+
+        hr {
+            width: 120px;
+            height: 2px;
+            background: #45CD97;
+        }
+
+        ul {
+            margin-top: 20px;
+
+            li {
+                list-style: none;
+                color: #7C7A8B;
+                cursor: pointer;
+            }
+        }
+    }
+
+    @media screen and(max-width: 1000px) {
+        padding: 36px 47px 45px;
+    }
+}
