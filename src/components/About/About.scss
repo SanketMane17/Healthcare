@@ -29,6 +29,10 @@
                 list-style: none;
                 color: #7C7A8B;
                 cursor: pointer;
+
+                &:hover {
+                    color: rgb(0, 171, 85);
+                }
             }
         }
     }
