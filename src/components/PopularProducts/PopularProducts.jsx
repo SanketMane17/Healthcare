@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { Product } from "../../components";
 import "./PopularProducts.scss";
