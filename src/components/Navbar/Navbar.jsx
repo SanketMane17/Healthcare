@@ -27,6 +27,10 @@ function Navbar({ hover, setHover, products, setProducts }) {
         setCurrTab(e.target.value);
     }
 
+    const handleClick = (e) => {
+        window.location.reload();
+    }
+
     return (
         <nav className="app__navbar">
             <ul className="app__navbar-list">
@@ -45,23 +49,31 @@ function Navbar({ hover, setHover, products, setProducts }) {
                             {item.name}
                             <BsFillCaretDownFill />
                         </button>
-                        <div className="app__navbar-dropdown-content">
+                        <div
+                            className="app__navbar-dropdown-content"
+                        >
                             {item.list.map(listItem => (
-                                <span key={listItem}>{listItem}</span>
+                                <a
+                                    href={`#${listItem}`}
+                                    key={listItem}
+                                    onClick={handleClick}
+                                >
+                                    {listItem}
+                                </a>
                             ))}
                         </div>
                     </div>
                 ))}
             </ul>
             <div className="app__navbar-search">
-                <Searchbar products={products} setProducts={setProducts}/>
+                <Searchbar products={products} setProducts={setProducts} />
             </div>
             <div className="app__navbar-user">
                 <AiOutlineShoppingCart className="default-color" />
                 <button>Log in</button>
                 <button className="signup">Sign up</button>
             </div>
-        </nav>
+        </nav >
     )
 }
 
